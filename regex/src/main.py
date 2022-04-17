@@ -34,6 +34,12 @@ def http_header_util_demo():
     header_dict = http_header_mapper(header)
     pprint.pprint(header_dict)
 
+def repeat_demo():
+    pattern = r'a.+?'
+    text = 'abaaaba'
+    for match in re.finditer(pattern, text):
+        print(match.group())
+
 def main():
     print("# " + date_util_demo.__name__)
     date_util_demo()
@@ -41,6 +47,8 @@ def main():
     print("# " + http_header_util_demo.__name__)
     http_header_util_demo()
 
+    print("# " + repeat_demo.__name__)
+    repeat_demo()
     
 if __name__ == '__main__':
     main()
